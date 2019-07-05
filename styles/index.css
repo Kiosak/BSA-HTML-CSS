@@ -1,4 +1,10 @@
 @import url('reset.css');
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+  line-height: 1.2rem;
+}
 
 header {
   width: 100%;
@@ -52,7 +58,7 @@ header {
   color: #d4cdab;
 }
 
-.header__menu-icons__list {
+.icons__list {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -60,7 +66,7 @@ header {
   flex-wrap: nowrap;
 }
 
-.header__menu-icons__list li {
+.icons__list li {
   padding: 0 10px;
 }
 
@@ -137,15 +143,21 @@ aside {
 }
 
 .article__info {
-  color: rebeccapurple;
+  color: #8e9b90;
 }
 
 aside {
+  grid-column: 2 / 3;
   height: fit-content;
 }
 
 .author__photo img {
   width: 100%;
+}
+
+.aside__social .icons__list {
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
 .aside__subscribe form {
@@ -161,7 +173,26 @@ aside {
 .aside__subscribe input:not([type='submit']) {
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #b6c4a2;
+  margin-bottom: 20px;
+}
+
+.aside__subscribe input[type='submit'] {
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  background: #93c0a4;
+  color: #fff;
+  transition: top 0.5s;
+}
+
+.aside__subscribe input[type='submit']:hover {
+  box-shadow: 0px 0px 10px #93c0a4c4;
+}
+
+.aside__subscribe input[type='submit']:active {
+  position: relative;
+  top: 2px;
 }
 
 .aside__search-body {
@@ -178,11 +209,12 @@ aside {
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9dbfaf;
+  color: #000000;
 }
 
 .aside__search-searchTerm:focus {
-  color: #b6c4a2;
+  border: 3px solid #dce2bd;
+  border-right: none;
 }
 
 .searchButton {
@@ -207,11 +239,16 @@ aside {
   margin: 20px;
 }
 
-.tag-cloud span {
+.tag-cloud .badge {
   color: #fff;
   background-color: #93c0a4;
   padding: 10px 16px;
   margin: 3px;
+}
+
+.tag-cloud .badge:hover {
+  background-color: #b6c4a2;
+  cursor: pointer;
 }
 
 .badge {
@@ -226,6 +263,36 @@ aside {
   border-radius: 0.25rem;
 }
 
-aside {
-  grid-column: 2 / 3;
+.aside__last-comments h4 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.comment {
+  border: 1px solid #8e9b90;
+  width: 100%;
+  min-height: 70px;
+  margin: 20px 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.commnet__author-avatar {
+  margin-right: 10px;
+  float: left;
+}
+
+.comment__author h6 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.comment__author span {
+  color: #8e9b90;
+  font-weight: 300;
+}
+.comment__author span::before {
+  content: ' - ';
 }
